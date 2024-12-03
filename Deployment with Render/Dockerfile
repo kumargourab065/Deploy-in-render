@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=build /app/target/DeploymentwithRender-0.0.1-SNAPSHOT.jar ./Demo.jar
  
 # Expose the application port
-ENV PORT 8080
+ENV PORT=8080
  
 # Command to run the application
 ENTRYPOINT ["java", "-jar", "Demo.jar"]
