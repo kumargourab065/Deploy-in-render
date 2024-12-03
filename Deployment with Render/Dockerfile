@@ -1,5 +1,5 @@
 # Base image with OpenJDK 22
-FROM openjdk:22-jdk-slim AS build
+FROM openjdk:17-jdk-slim AS build
  
 # Install Maven
 RUN apt-get update && apt-get install -y maven && apt-get clean
@@ -15,7 +15,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
  
 # Package stage
-FROM openjdk:22-jdk-slim
+FROM openjdk:17-jdk-slim
  
 # Set the working directory for the final image
 WORKDIR /app
