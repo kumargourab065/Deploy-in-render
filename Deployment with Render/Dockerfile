@@ -21,10 +21,10 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
  
 # Copy the JAR file from the build stage
-COPY --from=build /app/target/DeploymentwithRender-0.0.1-SNAPSHOT.jar ./Room.jar
+COPY --from=build /app/target/DeploymentwithRender-0.0.1-SNAPSHOT.jar ./Demo.jar
  
 # Expose the application port
 EXPOSE 8080
  
 # Command to run the application
-ENTRYPOINT ["java", "-jar", "Room.jar"]
+ENTRYPOINT ["java", "-jar", "Demo.jar"]
